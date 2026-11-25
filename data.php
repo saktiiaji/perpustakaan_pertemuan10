@@ -7,7 +7,7 @@ $sql = "SELECT * FROM anggota";
 $hasil = mysqli_query($koneksi, $sql);
 
 $jumlah = mysqli_num_rows($hasil);
-echo $jumlah;
+// echo $jumlah;
 
 ?>
 
@@ -19,7 +19,7 @@ echo $jumlah;
     <title>Pendaftaran Anggota</title>
 </head>
 <body>
-    <table>
+    <table border="1" cellpadding="8" cellspacing="0">
         <tr>
             <th>No</th><th>No Anggota</th><th>Nama Lengkap</th><th>Email</th><th>No HP</th><th>Jenis Anggota</th><th>Alamat</th><th>Aksi</th>
         </tr>
