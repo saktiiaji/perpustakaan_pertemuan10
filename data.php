@@ -19,6 +19,13 @@ $jumlah = mysqli_num_rows($hasil);
     <title>Pendaftaran Anggota</title>
 </head>
 <body>
+    <h1>Data Anggota Perpustakaan</h1>
+    <title>Pendaftaran Anggota Perpustakaan</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        h1 { color: #1f3864; }
+    </style>
+    <a href="form_anggota.php">Kembali ke Form</a>
     <table border="1" cellpadding="8" cellspacing="0">
         <tr>
             <th>No</th><th>No Anggota</th><th>Nama Lengkap</th><th>Email</th><th>No HP</th><th>Jenis Anggota</th><th>Alamat</th><th>Aksi</th>
@@ -33,6 +40,7 @@ $jumlah = mysqli_num_rows($hasil);
             <td><?php echo htmlspecialchars($baris['jenis_anggota']); ?></td>
             <td><?php echo htmlspecialchars($baris['alamat']); ?></td>
             <td>
+                <a href="edit.php?id=<?php echo (int)$baris['id']; ?>">Edit</a>
                 <a href="detail.php?id=<?php echo (int)$baris['id']; ?>">Detail</a>
                 <form class="inline" action="hapus.php" method="post" onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
                     <input type="hidden" name="id" value="<?php echo (int)$baris['id']; ?>">
